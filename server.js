@@ -13,6 +13,6 @@ app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 app.use(errorHandler);
 
-app.listen(port, () => {
+app.listen(5000, () => {
   console.log(`Server running on port ${port}`);
 });
