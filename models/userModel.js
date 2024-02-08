@@ -1,20 +1,46 @@
 const mongoose = require("mongoose");
 
-const userSchema = mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
-    username: {
-      type: String,
-      required: [true, "Please add the user name"],
+    firstName: {
+      type: String
     },
-    email: {
-      type: String,
-      required: [true, "Please add the user email address"],
-      unique: [true, "Email address already taken"],
+    lastName:{
+      type: String
+    },
+    email:{
+      type: String
+    },
+    dob:{
+      type: Date
+    },
+    phone: {
+      type: String
     },
     password: {
-      type: String,
-      required: [true, "Please add the user password"],
+      type: String
     },
+    OTP:{
+      type: String,
+      required: true,
+    },
+    isDeleted:{
+      type:Boolean,
+      default:false
+    },
+    isEmailVerified:{
+      type:Boolean,
+      default:false
+    },
+    profileImage:{
+      type:String
+    },
+    token: {
+      type: String
+    },
+    tokens:{
+      type: [String]
+    }
   },
   {
     timestamps: true,
